@@ -12,20 +12,20 @@ function loadCountries(region) {
       console.log(data);
       data.forEach((country) => {
         let blockCountry = `
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                    <div class="card">
-                        <img class="card-img-top" src="${country.flags.png}" alt="${country.flags.png}/>
-                        <div class="card-body">
-                            <h4 class="card-title"><a href="#">${country.translations.ces.official}</a></h4>
-                            <p class="card-text">Hlavní město: <b>${country.capital[0]}</b></p>
-                            <p><button class="btn btn-info" 
-                                data-bs-toggle="modal" 
-                                data-bs-target="#oneCountry"
-                                data-name="${country.name.common}">Informace</button></p>
-                        </div>
-                    </div>
-                </div>
-                `;
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-2">
+              <div class="card">
+            <img class="card-img-top" src="${country.flags.png}" alt="${country.flags.png}" style="width: 100%; height: 150px; object-fit: cover;"/>
+            <div class="card-body">
+                <h4 class="card-title"><a href="#">${country.translations.ces.official}</a></h4>
+                <p class="card-text">Hlavní město: <b>${country.capital[0]}</b></p>
+                <p><button class="btn btn-info" 
+              data-bs-toggle="modal" 
+              data-bs-target="#oneCountry"
+              data-name="${country.name.common}">Informace</button></p>
+            </div>
+              </div>
+          </div>
+          `;
         countriesList.innerHTML += blockCountry;
       });
       document.querySelectorAll('button[data-name]').forEach(button => {
